@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "php-avro-serde"
+  description: "A library to serialize and deserialize Avro records making use of the confluent schema registry"
+spec:
+  type: "library"
+  lifecycle: production
+  owner: "group:default/team-policy-operations-italy"
+  system: prima.it
