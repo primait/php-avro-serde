@@ -17,4 +17,4 @@ build/
 ocular.phar
 php-cs-fixer.phar
 phpstan.phar
-.phpunit.result.cache
+.cache
