@@ -29,5 +29,5 @@ return (new PhpCsFixer\Config())
         'fully_qualified_strict_types' => false,
     ])
     ->setFinder($finder)
-    ->setCacheFile('.php_cs.' . getenv('PHP_VERSION') . '.cache')
+    ->setCacheFile('.cache/.php_cs.' . getenv('PHP_VERSION') . '.cache')
     ->setUsingCache(true);
