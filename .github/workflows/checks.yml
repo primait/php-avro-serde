@@ -6,7 +6,7 @@ on:
       - master
 jobs:
   build-source:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       -
         name: Checkout
@@ -29,18 +29,15 @@ jobs:
       matrix:
         php:
           -
-            version: '8.2'
-            xdebug: '3.5.0'
-          -
             version: '8.3'
-            xdebug: '3.5.0'
+            xdebug: '3.5.3'
           -
             version: '8.4'
-            xdebug: '3.5.0'
+            xdebug: '3.5.3'
           -
             version: '8.5'
-            xdebug: '3.5.0'
-    runs-on: ubuntu-24.04
+            xdebug: '3.5.3'
+    runs-on: ubuntu-26.04
     steps:
       -
         name: Download sources
@@ -76,15 +73,12 @@ jobs:
           name: php-avro-serde-${{ matrix.php.version }}
           path: php-avro-serde-${{ matrix.php.version }}.tgz
   ci-checks:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs:
       - php-xdebug-docker
     strategy:
       matrix:
         php:
-          -
-            version: '8.2'
-            composer: --prefer-lowest
           -
             version: '8.3'
             composer: --prefer-lowest
@@ -94,9 +88,6 @@ jobs:
           -
             version: '8.5'
             composer: --prefer-lowest
-          -
-            version: '8.2'
-            composer: --prefer-stable
           -
             version: '8.3'
             composer: --prefer-stable
@@ -124,11 +115,21 @@ jobs:
         name: Load docker image
         run: |
           docker load -i php-avro-serde-${{ matrix.php.version }}.tgz
+
+      - name: Cache Composer downloads
+        uses: actions/cache@v6
+        with:
+          path: ${{ runner.temp }}/composer-cache
+          key: ${{ runner.os }}-composer-${{ matrix.php.version }}-${{ matrix.php.composer }}-${{ hashFiles('composer.lock') }}
+
       -
         name: Install vendors
         run: |
           docker run -i --rm --net=host --sig-proxy=true --pid=host \
-            -v "${GITHUB_WORKSPACE}":"${GITHUB_WORKSPACE}" -w "${GITHUB_WORKSPACE}" php-avro-serde:${{ matrix.php.version }} \
+            -v "${GITHUB_WORKSPACE}":"${GITHUB_WORKSPACE}" \
+            -v "${{ runner.temp }}/composer-cache:/tmp/composer-cache" \
+            -e COMPOSER_CACHE_DIR=/tmp/composer-cache \
+            -w "${GITHUB_WORKSPACE}" php-avro-serde:${{ matrix.php.version }} \
             composer update --no-interaction --no-scripts --no-ansi ${{ matrix.php.composer }}
       -
         name: Run Static analysis
@@ -158,7 +159,7 @@ jobs:
             -v "${GITHUB_WORKSPACE}":"${GITHUB_WORKSPACE}" -w "${GITHUB_WORKSPACE}" php-avro-serde:${{ matrix.php.version }} \
             -d xdebug.mode=coverage vendor/bin/phpunit --exclude-group integration --coverage-clover=build/coverage.clover --coverage-text
   confluent-integration:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs:
       - php-xdebug-docker
     strategy:
@@ -185,11 +186,19 @@ jobs:
         name: Load docker image
         run: |
           docker load -i php-avro-serde-8.3.tgz
+      - name: Cache Composer downloads
+        uses: actions/cache@v6
+        with:
+          path: ${{ runner.temp }}/composer-cache
+          key: ${{ runner.os }}-composer-${{ matrix.php.version }}-${{ matrix.php.composer }}-${{ hashFiles('composer.lock') }}
       -
         name: Install vendors
         run: |
           docker run -i --rm --net=host --sig-proxy=true --pid=host \
-            -v "${GITHUB_WORKSPACE}":"${GITHUB_WORKSPACE}" -w "${GITHUB_WORKSPACE}" php-avro-serde:8.3 \
+            -v "${GITHUB_WORKSPACE}":"${GITHUB_WORKSPACE}" \
+            -v "${{ runner.temp }}/composer-cache:/tmp/composer-cache" \
+            -e COMPOSER_CACHE_DIR=/tmp/composer-cache \
+            -w "${GITHUB_WORKSPACE}" php-avro-serde:8.3 \
             composer update --no-interaction --no-scripts --no-ansi --prefer-stable
       -
         name: Run PHPUnit Integration

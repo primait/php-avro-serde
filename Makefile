@@ -75,6 +75,7 @@ install-phars:
 
 platform:
 	docker compose down
+	docker compose pull
 	docker compose up --remove-orphans -d
 	bin/wait-for-all.sh
 
