@@ -1,0 +1,45 @@
+<?php
+
+declare(strict_types=1);
+
+namespace PrimaAssicurazioni\AvroSerializer\Test\Objects\Schema\Generation\Fixture;
+
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Annotations as SerDe;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroDefault;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroName;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroNamespace;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroType;
+
+/**
+ * @SerDe\AvroName("SimpleRecord")
+ *
+ * @SerDe\AvroNamespace("org.acme")
+ *
+ * @SerDe\AvroType("record")
+ */
+#[AvroName('SimpleRecord')]
+#[AvroNamespace('org.acme')]
+#[AvroType('record')]
+class SimpleRecord
+{
+    /**
+     * @SerDe\AvroType("int")
+     *
+     * @SerDe\AvroDefault(42)
+     */
+    #[AvroType('int')]
+    #[AvroDefault(42)]
+    private $intType;
+
+    /**
+     * @SerDe\AvroType("uuid")
+     */
+    #[AvroType('uuid')]
+    private $uuidType;
+
+    /**
+     * @SerDe\AvroType("timestamp-millis")
+     */
+    #[AvroType('timestamp-millis')]
+    private $timestampMillisType;
+}

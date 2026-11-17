@@ -1,0 +1,76 @@
+{
+  "name": "prima-assicurazioni/avro-serde",
+  "description": "A library to serialize and deserialize Avro records making use of the confluent schema registry",
+  "keywords": [
+    "confluent-platform",
+    "confluent",
+    "avro",
+    "schema-registry",
+    "schema-evolution",
+    "kafka",
+    "serialization",
+    "serializer",
+    "deserialization",
+    "symfony",
+    "symfony-serializer"
+  ],
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Ploch",
+      "email": "thomas.ploch@flixbus.com"
+    },
+    {
+      "name": "Mattia Basone",
+      "email": "mattia.basone@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "beberlei/assert": "^2.9.9|~3.0",
+    "prima-assicurazioni/confluent-schema-registry-api": "dev-master#8fbaeec5521907df1302839d14265a6a12b917b5",
+    "guzzlehttp/promises": "^1.4.0|^2.0.0",
+    "widmogrod/php-functional": "^6.0|^7.0",
+    "apache/avro": "dev-main#c499eefb48aa2db906c7bca14a047223806f36db"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "phpunit/phpunit": "^10.5",
+    "phpbench/phpbench": "1.3.1",
+    "vlucas/phpdotenv": "^5.0",
+    "symfony/serializer": "^5.4|^6.4|^7.1",
+    "doctrine/annotations": "^2.0",
+    "phpoption/phpoption": "^1.8.0",
+    "phpstan/phpstan": "^2.3",
+    "friendsofphp/php-cs-fixer": "^3.95"
+  },
+  "autoload": {
+    "psr-4": {
+      "PrimaAssicurazioni\\AvroSerializer\\Objects\\": "src/Objects",
+      "PrimaAssicurazioni\\AvroSerializer\\Integrations\\": "integrations/"
+    },
+    "files": [
+      "src/Protocol.php",
+      "src/Serialize.php",
+      "src/Common.php"
+    ]
+  },
+  "suggest": {
+    "symfony/serializer": "To integrate avro-serde-php into symfony ecosystem",
+    "doctrine/annotations": "To enable the generation of avro schemas from annotations"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PrimaAssicurazioni\\AvroSerializer\\Test\\": "test/",
+      "PrimaAssicurazioni\\AvroSerializer\\Benchmarks\\": "benchmarks/",
+      "PrimaAssicurazioni\\AvroSerializer\\Examples\\": "examples/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/primait/php-confluent-schema-registry-api"
+    }
+  ]
+}
