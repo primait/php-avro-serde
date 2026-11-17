@@ -67,9 +67,6 @@
       "PrimaAssicurazioni\\AvroSerializer\\Examples\\": "examples/"
     }
   },
-  "scripts": {
-    "phpstan": ""
-  },
   "repositories": [
     {
       "type": "vcs",

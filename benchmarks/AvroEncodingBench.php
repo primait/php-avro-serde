@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace PrimaAssicurazioni\AvroSerializer\Benchmarks;
 
-use AvroIOException;
-use AvroSchema;
-use AvroSchemaParseException;
+use Apache\Avro\IO\AvroIOException;
+use Apache\Avro\Schema\AvroSchema;
+use Apache\Avro\Schema\AvroSchemaParseException;
 use Exception;
 use PrimaAssicurazioni\AvroSerializer\Objects\RecordSerializer;
-use FlixTech\SchemaRegistryApi\Exception\SchemaRegistryException;
-use FlixTech\SchemaRegistryApi\Registry;
-use FlixTech\SchemaRegistryApi\Registry\BlockingRegistry;
-use FlixTech\SchemaRegistryApi\Registry\Cache\AvroObjectCacheAdapter;
-use FlixTech\SchemaRegistryApi\Registry\CachedRegistry;
-use FlixTech\SchemaRegistryApi\Registry\PromisingRegistry;
+use PrimaAssicurazioni\SchemaRegistryApi\Exception\SchemaRegistryException;
+use PrimaAssicurazioni\SchemaRegistryApi\Registry;
+use PrimaAssicurazioni\SchemaRegistryApi\Registry\BlockingRegistry;
+use PrimaAssicurazioni\SchemaRegistryApi\Registry\Cache\AvroObjectCacheAdapter;
+use PrimaAssicurazioni\SchemaRegistryApi\Registry\CachedRegistry;
+use PrimaAssicurazioni\SchemaRegistryApi\Registry\PromisingRegistry;
 use GuzzleHttp\Client;
 use GuzzleHttp\Promise\PromiseInterface;
 use PhpBench\Benchmark\Metadata\Annotations\BeforeMethods;

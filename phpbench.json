@@ -1,6 +1,6 @@
 {
-  "bootstrap": "benchmarks/bootstrap.php",
-  "extensions": [
+  "runner.bootstrap": "benchmarks/bootstrap.php",
+  "core.extensions": [
     "PhpBench\\Extensions\\XDebug\\XDebugExtension"
   ]
 }
