@@ -4,20 +4,21 @@ on:
   push:
     branches:
       - master
+
+permissions:
+  contents: read
+
 jobs:
   build-source:
     runs-on: ubuntu-26.04
     steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v4
-      -
-        name: Install phars
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Install phars
         run: |
           make install-phars
-      -
-        name: Upload source directory
-        uses: actions/upload-artifact@v4
+      - name: Upload source directory
+        uses: actions/upload-artifact@v7
         with:
           name: source
           include-hidden-files: true
@@ -39,16 +40,13 @@ jobs:
             xdebug: '3.5.3'
     runs-on: ubuntu-26.04
     steps:
-      -
-        name: Download sources
+      - name: Download sources
         uses: actions/download-artifact@v4
         with:
           name: source
-      -
-        name: Set up Docker Buildx
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      -
-        name: Build
+      - name: Build
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -58,16 +56,13 @@ jobs:
           build-args: |
             PHP_VERSION=${{ matrix.php.version }}
             XDEBUG_VERSION=${{ matrix.php.xdebug }}
-      -
-        name: Inspect docker image
+      - name: Inspect docker image
         run: |
           docker image inspect php-avro-serde:${{ matrix.php.version }}
-      -
-        name: Save docker image
+      - name: Save docker image
         run: |
           docker save php-avro-serde:${{ matrix.php.version }} -o php-avro-serde-${{ matrix.php.version }}.tgz
-      -
-        name: Upload docker image
+      - name: Upload docker image
         uses: actions/upload-artifact@v4
         with:
           name: php-avro-serde-${{ matrix.php.version }}
@@ -98,21 +93,17 @@ jobs:
             version: '8.5'
             composer: --prefer-stable
     steps:
-      -
-        name: Download sources
+      - name: Download sources
         uses: actions/download-artifact@v4
         with:
           name: source
-      -
-        name: Set up Docker Buildx
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      -
-        name: Download docker image
+      - name: Download docker image
         uses: actions/download-artifact@v4
         with:
           name: php-avro-serde-${{ matrix.php.version }}
-      -
-        name: Load docker image
+      - name: Load docker image
         run: |
           docker load -i php-avro-serde-${{ matrix.php.version }}.tgz
 
@@ -122,17 +113,18 @@ jobs:
           path: ${{ runner.temp }}/composer-cache
           key: ${{ runner.os }}-composer-${{ matrix.php.version }}-${{ matrix.php.composer }}-${{ hashFiles('composer.lock') }}
 
-      -
-        name: Install vendors
+      - name: Install vendors
+        env:
+          COMPOSER_AUTH: '{"github-oauth":{"github.com":"${{ github.token }}"}}'
         run: |
           docker run -i --rm --net=host --sig-proxy=true --pid=host \
             -v "${GITHUB_WORKSPACE}":"${GITHUB_WORKSPACE}" \
             -v "${{ runner.temp }}/composer-cache:/tmp/composer-cache" \
             -e COMPOSER_CACHE_DIR=/tmp/composer-cache \
+            -e COMPOSER_AUTH \
             -w "${GITHUB_WORKSPACE}" php-avro-serde:${{ matrix.php.version }} \
             composer update --no-interaction --no-scripts --no-ansi ${{ matrix.php.composer }}
-      -
-        name: Run Static analysis
+      - name: Run Static analysis
         if: ${{ matrix.php.version == '8.3' && matrix.php.composer == '--prefer-stable' }}
         run: |
           chmod a+x bin/phpstan.phar bin/php-cs-fixer.phar
@@ -143,15 +135,13 @@ jobs:
             -v "${GITHUB_WORKSPACE}":"${GITHUB_WORKSPACE}" -w "${GITHUB_WORKSPACE}" php-avro-serde:${{ matrix.php.version }} \
             bin/php-cs-fixer.phar fix --config=.php-cs-fixer.dist.php --diff -v --dry-run --path-mode=intersection --allow-risky=yes \
             src test
-      -
-        name: Run PHPUnit
+      - name: Run PHPUnit
         if: ${{ !(matrix.php.version == '8.3' && matrix.php.composer == '--prefer-stable') }}
         run: |
           docker run -i --rm --net=host --sig-proxy=true --pid=host \
             -v "${GITHUB_WORKSPACE}":"${GITHUB_WORKSPACE}" -w "${GITHUB_WORKSPACE}" php-avro-serde:${{ matrix.php.version }} \
             vendor/bin/phpunit --exclude-group integration
-      -
-        name: Run PHPUnit with Coverage Report
+      - name: Run PHPUnit with Coverage Report
         if: ${{ matrix.php.version == '8.3' && matrix.php.composer == '--prefer-stable' }}
         run: |
           mkdir -p build
@@ -169,21 +159,17 @@ jobs:
           - version: 7.7.7
           - version: 8.0.3
     steps:
-      -
-        name: Download sources
+      - name: Download sources
         uses: actions/download-artifact@v4
         with:
           name: source
-      -
-        name: Set up Docker Buildx
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      -
-        name: Download docker image
+      - name: Download docker image
         uses: actions/download-artifact@v4
         with:
           name: php-avro-serde-8.3
-      -
-        name: Load docker image
+      - name: Load docker image
         run: |
           docker load -i php-avro-serde-8.3.tgz
       - name: Cache Composer downloads
@@ -191,17 +177,18 @@ jobs:
         with:
           path: ${{ runner.temp }}/composer-cache
           key: ${{ runner.os }}-composer-${{ matrix.php.version }}-${{ matrix.php.composer }}-${{ hashFiles('composer.lock') }}
-      -
-        name: Install vendors
+      - name: Install vendors
+        env:
+          COMPOSER_AUTH: '{"github-oauth":{"github.com":"${{ github.token }}"}}'
         run: |
           docker run -i --rm --net=host --sig-proxy=true --pid=host \
             -v "${GITHUB_WORKSPACE}":"${GITHUB_WORKSPACE}" \
             -v "${{ runner.temp }}/composer-cache:/tmp/composer-cache" \
             -e COMPOSER_CACHE_DIR=/tmp/composer-cache \
+            -e COMPOSER_AUTH \
             -w "${GITHUB_WORKSPACE}" php-avro-serde:8.3 \
             composer update --no-interaction --no-scripts --no-ansi --prefer-stable
-      -
-        name: Run PHPUnit Integration
+      - name: Run PHPUnit Integration
         env:
           CONFLUENT_VERSION: ${{ matrix.confluent.version }}
         run: |
