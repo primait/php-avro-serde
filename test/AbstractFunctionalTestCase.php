@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Test;
+namespace PrimaAssicurazioni\AvroSerializer\Test;
 
 use Apache\Avro\Schema\AvroArraySchema;
 use Apache\Avro\Schema\AvroEnumSchema;

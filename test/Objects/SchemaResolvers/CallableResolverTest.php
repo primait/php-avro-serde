@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Test\Objects\SchemaResolvers;
+namespace PrimaAssicurazioni\AvroSerializer\Test\Objects\SchemaResolvers;
 
 use Apache\Avro\Schema\AvroSchemaParseException;
-use FlixTech\AvroSerializer\Objects\SchemaResolvers\CallableResolver;
-use FlixTech\AvroSerializer\Test\AbstractFunctionalTestCase;
 use PHPUnit\Framework\Attributes\Test;
+use PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolvers\CallableResolver;
+use PrimaAssicurazioni\AvroSerializer\Test\AbstractFunctionalTestCase;
 
 use function Widmogrod\Functional\constt;
 

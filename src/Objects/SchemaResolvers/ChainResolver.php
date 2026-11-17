@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects\SchemaResolvers;
+namespace PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolvers;
 
 use Apache\Avro\Schema\AvroSchema;
-use FlixTech\AvroSerializer\Objects\SchemaResolverInterface;
+use PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolverInterface;
 
 class ChainResolver implements SchemaResolverInterface
 {

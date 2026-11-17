@@ -1,27 +1,27 @@
 <?php
 
-namespace FlixTech\AvroSerializer\Test;
+namespace PrimaAssicurazioni\AvroSerializer\Test;
 
-use FlixTech\AvroSerializer\Objects\Exceptions\AvroDecodingException;
 use PHPUnit\Framework\Attributes\Test;
+use PrimaAssicurazioni\AvroSerializer\Objects\Exceptions\AvroDecodingException;
 use Widmogrod\Monad\Either\Left;
 use Widmogrod\Monad\Either\Right;
 use Widmogrod\Monad\Maybe\Just;
 use Widmogrod\Monad\Maybe\Nothing;
 
-use const FlixTech\AvroSerializer\Protocol\encode;
-use const FlixTech\AvroSerializer\Protocol\PROTOCOL_ACCESSOR_AVRO;
-use const FlixTech\AvroSerializer\Protocol\PROTOCOL_ACCESSOR_SCHEMA_ID;
-use const FlixTech\AvroSerializer\Protocol\PROTOCOL_ACCESSOR_VERSION;
-use const FlixTech\AvroSerializer\Protocol\validate;
-use const FlixTech\AvroSerializer\Protocol\WIRE_FORMAT_PROTOCOL_VERSION;
+use const PrimaAssicurazioni\AvroSerializer\Protocol\encode;
+use const PrimaAssicurazioni\AvroSerializer\Protocol\PROTOCOL_ACCESSOR_AVRO;
+use const PrimaAssicurazioni\AvroSerializer\Protocol\PROTOCOL_ACCESSOR_SCHEMA_ID;
+use const PrimaAssicurazioni\AvroSerializer\Protocol\PROTOCOL_ACCESSOR_VERSION;
+use const PrimaAssicurazioni\AvroSerializer\Protocol\validate;
+use const PrimaAssicurazioni\AvroSerializer\Protocol\WIRE_FORMAT_PROTOCOL_VERSION;
 
-use function FlixTech\AvroSerializer\Protocol\decode;
-use function FlixTech\AvroSerializer\Protocol\encode;
-use function FlixTech\AvroSerializer\Protocol\encoder;
-use function FlixTech\AvroSerializer\Protocol\validate;
-use function FlixTech\AvroSerializer\Protocol\validator;
-use function FlixTech\AvroSerializer\Protocol\version;
+use function PrimaAssicurazioni\AvroSerializer\Protocol\decode;
+use function PrimaAssicurazioni\AvroSerializer\Protocol\encode;
+use function PrimaAssicurazioni\AvroSerializer\Protocol\encoder;
+use function PrimaAssicurazioni\AvroSerializer\Protocol\validate;
+use function PrimaAssicurazioni\AvroSerializer\Protocol\validator;
+use function PrimaAssicurazioni\AvroSerializer\Protocol\version;
 use function Widmogrod\Functional\curryN;
 
 class ProtocolTest extends AbstractFunctionalTestCase

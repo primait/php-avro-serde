@@ -1,6 +1,6 @@
 <?php
 
-namespace FlixTech\AvroSerializer\Test;
+namespace PrimaAssicurazioni\AvroSerializer\Test;
 
 use Apache\Avro\Datum\AvroIOBinaryDecoder;
 use Apache\Avro\Datum\AvroIOBinaryEncoder;
@@ -8,21 +8,21 @@ use Apache\Avro\Datum\AvroIODatumReader;
 use Apache\Avro\Datum\AvroIODatumWriter;
 use Apache\Avro\IO\AvroIOException;
 use Apache\Avro\IO\AvroStringIO;
-use FlixTech\AvroSerializer\Objects\Exceptions\AvroDecodingException;
-use FlixTech\AvroSerializer\Objects\Exceptions\AvroEncodingException;
 use PHPUnit\Framework\Attributes\Test;
+use PrimaAssicurazioni\AvroSerializer\Objects\Exceptions\AvroDecodingException;
+use PrimaAssicurazioni\AvroSerializer\Objects\Exceptions\AvroEncodingException;
 use Widmogrod\Monad\Either\Left;
 use Widmogrod\Monad\Either\Right;
 
-use const FlixTech\AvroSerializer\Serialize\writeDatum;
+use const PrimaAssicurazioni\AvroSerializer\Serialize\writeDatum;
 
-use function FlixTech\AvroSerializer\Serialize\avroBinaryDecoder;
-use function FlixTech\AvroSerializer\Serialize\avroBinaryEncoder;
-use function FlixTech\AvroSerializer\Serialize\avroDatumReader;
-use function FlixTech\AvroSerializer\Serialize\avroDatumWriter;
-use function FlixTech\AvroSerializer\Serialize\avroStringIo;
-use function FlixTech\AvroSerializer\Serialize\readDatum;
-use function FlixTech\AvroSerializer\Serialize\writeDatum;
+use function PrimaAssicurazioni\AvroSerializer\Serialize\avroBinaryDecoder;
+use function PrimaAssicurazioni\AvroSerializer\Serialize\avroBinaryEncoder;
+use function PrimaAssicurazioni\AvroSerializer\Serialize\avroDatumReader;
+use function PrimaAssicurazioni\AvroSerializer\Serialize\avroDatumWriter;
+use function PrimaAssicurazioni\AvroSerializer\Serialize\avroStringIo;
+use function PrimaAssicurazioni\AvroSerializer\Serialize\readDatum;
+use function PrimaAssicurazioni\AvroSerializer\Serialize\writeDatum;
 use function Widmogrod\Functional\curryN;
 
 class SerializeTest extends AbstractFunctionalTestCase

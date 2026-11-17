@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Test\Objects\Schema;
+namespace PrimaAssicurazioni\AvroSerializer\Test\Objects\Schema;
 
-use FlixTech\AvroSerializer\Objects\Schema;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema;
 
 class MapTypeTest extends TestCase
 {

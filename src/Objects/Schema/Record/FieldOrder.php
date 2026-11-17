@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects\Schema\Record;
+namespace PrimaAssicurazioni\AvroSerializer\Objects\Schema\Record;
 
 class FieldOrder extends FieldOption
 {

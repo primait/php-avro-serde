@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects\Exceptions;
+namespace PrimaAssicurazioni\AvroSerializer\Objects\Exceptions;
 
-use FlixTech\AvroSerializer\Objects\AvroSerializerException;
+use PrimaAssicurazioni\AvroSerializer\Objects\AvroSerializerException;
 
 class AvroEncodingException extends \RuntimeException implements AvroSerializerException
 {

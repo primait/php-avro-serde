@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Test\Objects;
+namespace PrimaAssicurazioni\AvroSerializer\Test\Objects;
 
 use Apache\Avro\IO\AvroIOException;
 use Apache\Avro\Schema\AvroSchemaParseException;
-use FlixTech\AvroSerializer\Objects\Exceptions\AvroEncodingException;
-use FlixTech\AvroSerializer\Objects\RecordSerializer;
-use FlixTech\AvroSerializer\Test\AbstractFunctionalTestCase;
 use GuzzleHttp\Promise\FulfilledPromise;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\MockObject\MockObject;
+use PrimaAssicurazioni\AvroSerializer\Objects\Exceptions\AvroEncodingException;
+use PrimaAssicurazioni\AvroSerializer\Objects\RecordSerializer;
+use PrimaAssicurazioni\AvroSerializer\Test\AbstractFunctionalTestCase;
 use PrimaAssicurazioni\SchemaRegistryApi\Exception\SchemaNotFoundException;
 use PrimaAssicurazioni\SchemaRegistryApi\Exception\SchemaRegistryException;
 use PrimaAssicurazioni\SchemaRegistryApi\Exception\SubjectNotFoundException;
 use PrimaAssicurazioni\SchemaRegistryApi\Registry;
 
-use function FlixTech\AvroSerializer\Common\memoize;
+use function PrimaAssicurazioni\AvroSerializer\Common\memoize;
 
 class RecordSerializerTest extends AbstractFunctionalTestCase
 {

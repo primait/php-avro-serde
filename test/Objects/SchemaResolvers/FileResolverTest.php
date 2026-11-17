@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Test\Objects\SchemaResolvers;
+namespace PrimaAssicurazioni\AvroSerializer\Test\Objects\SchemaResolvers;
 
 use Apache\Avro\Schema\AvroSchema;
 use Apache\Avro\Schema\AvroSchemaParseException;
-use FlixTech\AvroSerializer\Objects\SchemaResolvers\FileResolver;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolvers\FileResolver;
 use Widmogrod\Common\ValueOfInterface;
 
-use function FlixTech\AvroSerializer\Common\inflectRecord;
+use function PrimaAssicurazioni\AvroSerializer\Common\inflectRecord;
 
 class FileResolverTest extends TestCase
 {

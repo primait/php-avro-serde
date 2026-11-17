@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes;
+namespace PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes;
 
 enum Type: string
 {

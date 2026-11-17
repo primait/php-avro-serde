@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Integrations\Symfony\Serializer\NameConverter;
+namespace PrimaAssicurazioni\AvroSerializer\Integrations\Symfony\Serializer\NameConverter;
 
-use FlixTech\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
-use FlixTech\AvroSerializer\Objects\Schema\AttributeName;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\SchemaAttributeReader;
+use PrimaAssicurazioni\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\AttributeName;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\SchemaAttributeReader;
 use Symfony\Component\Serializer\NameConverter\AdvancedNameConverterInterface;
 
 class AvroNameConverter implements AdvancedNameConverterInterface

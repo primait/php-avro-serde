@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes;
+namespace PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes;
 
-use FlixTech\AvroSerializer\Objects\Schema\AttributeName;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\SchemaAttributes;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\VariadicAttribute;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\AttributeName;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\SchemaAttributes;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\VariadicAttribute;
 
 #[\Attribute]
 final class AvroAliases implements VariadicAttribute

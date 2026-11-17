@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Examples;
+namespace PrimaAssicurazioni\AvroSerializer\Examples;
 
 use Dotenv\Dotenv;
-use FlixTech\AvroSerializer\Objects\DefaultRecordSerializerFactory;
-use FlixTech\AvroSerializer\Objects\Schema;
+use PrimaAssicurazioni\AvroSerializer\Objects\DefaultRecordSerializerFactory;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema;
 use PHPUnit\Framework\Assert;
 
 require __DIR__ . '/../vendor/autoload.php';

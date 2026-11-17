@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects\Schema\Generation\Annotations;
+namespace PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Annotations;
 
-use FlixTech\AvroSerializer\Objects\Schema\Generation\SchemaAttribute;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\SchemaAttributes;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\SchemaAttribute;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\SchemaAttributes;
 
 trait ContainsOnlyTypes
 {

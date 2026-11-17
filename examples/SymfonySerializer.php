@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Examples;
+namespace PrimaAssicurazioni\AvroSerializer\Examples;
 
 use Dotenv\Dotenv;
-use FlixTech\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
-use FlixTech\AvroSerializer\Objects\DefaultRecordSerializerFactory;
-use FlixTech\AvroSerializer\Objects\SchemaResolvers\CallableResolver;
+use PrimaAssicurazioni\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
+use PrimaAssicurazioni\AvroSerializer\Objects\DefaultRecordSerializerFactory;
+use PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolvers\CallableResolver;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 use Symfony\Component\Serializer\Serializer;

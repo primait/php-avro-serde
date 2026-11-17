@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects\Schema;
+namespace PrimaAssicurazioni\AvroSerializer\Objects\Schema;
 
-use FlixTech\AvroSerializer\Objects\Schema;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema;
 
 class UnionType extends Schema
 {

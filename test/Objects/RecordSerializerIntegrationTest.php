@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Test\Objects;
+namespace PrimaAssicurazioni\AvroSerializer\Test\Objects;
 
-use FlixTech\AvroSerializer\Objects\DefaultRecordSerializerFactory;
-use FlixTech\AvroSerializer\Objects\RecordSerializer;
-use FlixTech\AvroSerializer\Test\AbstractFunctionalTestCase;
 use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\Test;
+use PrimaAssicurazioni\AvroSerializer\Objects\DefaultRecordSerializerFactory;
+use PrimaAssicurazioni\AvroSerializer\Objects\RecordSerializer;
+use PrimaAssicurazioni\AvroSerializer\Test\AbstractFunctionalTestCase;
 use PrimaAssicurazioni\SchemaRegistryApi\Exception\IncompatibleAvroSchemaException;
 use PrimaAssicurazioni\SchemaRegistryApi\Exception\SchemaRegistryException;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects\Schema;
+namespace PrimaAssicurazioni\AvroSerializer\Objects\Schema;
 
 class EnumType extends ComplexType
 {

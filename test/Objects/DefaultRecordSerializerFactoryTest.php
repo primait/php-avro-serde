@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Test\Objects;
+namespace PrimaAssicurazioni\AvroSerializer\Test\Objects;
 
-use FlixTech\AvroSerializer\Objects\DefaultRecordSerializerFactory;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use PrimaAssicurazioni\AvroSerializer\Objects\DefaultRecordSerializerFactory;
 
 class DefaultRecordSerializerFactoryTest extends TestCase
 {

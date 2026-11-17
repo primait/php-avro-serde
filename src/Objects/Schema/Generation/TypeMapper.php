@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects\Schema\Generation;
+namespace PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation;
 
-use FlixTech\AvroSerializer\Objects\Schema;
-use FlixTech\AvroSerializer\Objects\Schema\AttributeName;
-use FlixTech\AvroSerializer\Objects\Schema\TypeName;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\AttributeName;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\TypeName;
 
 final class TypeMapper
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace FlixTech\AvroSerializer\Test\Objects\Schema;
+namespace PrimaAssicurazioni\AvroSerializer\Test\Objects\Schema;
 
-use FlixTech\AvroSerializer\Objects\Schema;
-use FlixTech\AvroSerializer\Objects\Schema\Record\FieldOption;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Record\FieldOption;
 
 class RecordTypeTest extends TestCase
 {

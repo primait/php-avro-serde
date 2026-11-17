@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Examples;
+namespace PrimaAssicurazioni\AvroSerializer\Examples;
 
 use Dotenv\Dotenv;
-use FlixTech\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
-use FlixTech\AvroSerializer\Objects\DefaultRecordSerializerFactory;
-use FlixTech\AvroSerializer\Objects\DefaultSchemaGeneratorFactory;
+use PrimaAssicurazioni\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
+use PrimaAssicurazioni\AvroSerializer\Objects\DefaultRecordSerializerFactory;
+use PrimaAssicurazioni\AvroSerializer\Objects\DefaultSchemaGeneratorFactory;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\Serializer\Normalizer\PropertyNormalizer;
 use Symfony\Component\Serializer\Serializer;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Annotations as SerDe;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Annotations as SerDe;
 
 require __DIR__ . '/../vendor/autoload.php';
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace FlixTech\AvroSerializer\Protocol;
+namespace PrimaAssicurazioni\AvroSerializer\Protocol;
 
-use FlixTech\AvroSerializer\Objects\Exceptions\AvroDecodingException;
-use FlixTech\AvroSerializer\Objects\Exceptions\AvroEncodingException;
-use FlixTech\AvroSerializer\Objects\Exceptions\Exceptions;
+use PrimaAssicurazioni\AvroSerializer\Objects\Exceptions\AvroDecodingException;
+use PrimaAssicurazioni\AvroSerializer\Objects\Exceptions\AvroEncodingException;
+use PrimaAssicurazioni\AvroSerializer\Objects\Exceptions\Exceptions;
 use Widmogrod\Monad\Either\Either;
 use Widmogrod\Monad\Either\Left;
 use Widmogrod\Monad\Either\Right;
@@ -19,14 +19,14 @@ const PROTOCOL_ACCESSOR_VERSION = 'version';
 const PROTOCOL_ACCESSOR_SCHEMA_ID = 'schemaId';
 const PROTOCOL_ACCESSOR_AVRO = 'avro';
 
-const version = '\FlixTech\AvroSerializer\Protocol\version';
+const version = '\PrimaAssicurazioni\AvroSerializer\Protocol\version';
 
 function version(): int
 {
     return WIRE_FORMAT_PROTOCOL_VERSION;
 }
 
-const encode = '\FlixTech\AvroSerializer\Protocol\encode';
+const encode = '\PrimaAssicurazioni\AvroSerializer\Protocol\encode';
 
 function encode(int $protocolVersion, int $schemaId, string $avroEncodedBinaryString): Either
 {
@@ -52,14 +52,14 @@ function encode(int $protocolVersion, int $schemaId, string $avroEncodedBinarySt
         ); // @codeCoverageIgnoreEnd
 }
 
-const encoder = '\FlixTech\AvroSerializer\Protocol\encoder';
+const encoder = '\PrimaAssicurazioni\AvroSerializer\Protocol\encoder';
 
 function encoder(int $protocolVersion): callable
 {
     return curryN(3, encode)($protocolVersion);
 }
 
-const decode = '\FlixTech\AvroSerializer\Protocol\decode';
+const decode = '\PrimaAssicurazioni\AvroSerializer\Protocol\decode';
 
 function decode(string $binaryString): Either
 {
@@ -89,7 +89,7 @@ function decode(string $binaryString): Either
         );
 }
 
-const validate = '\FlixTech\AvroSerializer\Protocol\validate';
+const validate = '\PrimaAssicurazioni\AvroSerializer\Protocol\validate';
 
 /**
  * @param array<mixed,mixed> $decoded
@@ -106,7 +106,7 @@ function validate(int $protocolVersion, array $decoded): Maybe
         : nothing();
 }
 
-const validator = '\FlixTech\AvroSerializer\Protocol\validator';
+const validator = '\PrimaAssicurazioni\AvroSerializer\Protocol\validator';
 
 /**
  * @return \Closure

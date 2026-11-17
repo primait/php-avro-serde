@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Examples;
+namespace PrimaAssicurazioni\AvroSerializer\Examples;
 
 use PHPUnit\Framework\Assert;
 
@@ -20,7 +20,7 @@ $valueSchemaJson = '
 ';
 $valueSchema = \AvroSchema::parse($valueSchemaJson);
 
-$resolver = new \FlixTech\AvroSerializer\Objects\SchemaResolvers\CallableResolver(
+$resolver = new \PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolvers\CallableResolver(
     \Widmogrod\Functional\constt(\AvroSchema::parse($valueSchemaJson))
 );
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects;
+namespace PrimaAssicurazioni\AvroSerializer\Objects;
 
 use Assert\Assert;
 use GuzzleHttp\Client;

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Test\Objects\Schema\Generation\Fixture;
+namespace PrimaAssicurazioni\AvroSerializer\Test\Objects\Schema\Generation\Fixture;
 
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Annotations as SerDe;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\AvroDoc;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\AvroName;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\AvroTargetClass;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\AvroType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Annotations as SerDe;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroDoc;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroName;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroTargetClass;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroType;
 
 /**
  * @SerDe\AvroType("record")
@@ -24,7 +24,7 @@ class RecordWithRecordType
      *
      * @SerDe\AvroType("record", attributes={
      *
-     *     @SerDe\AvroTargetClass("\FlixTech\AvroSerializer\Test\Objects\Schema\Generation\Fixture\SimpleRecord"),
+     *     @SerDe\AvroTargetClass("\PrimaAssicurazioni\AvroSerializer\Test\Objects\Schema\Generation\Fixture\SimpleRecord"),
      *
      *     @SerDe\AvroDoc("This a simple record for testing purposes")
      * })

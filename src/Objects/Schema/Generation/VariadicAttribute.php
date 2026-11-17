@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects\Schema\Generation;
+namespace PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation;
 
 /**
  * Marker interface to indicate that the attribute contains variadic values

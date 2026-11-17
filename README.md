@@ -59,7 +59,7 @@ The `RecordSerializer` is the main way you interact with this library. It provid
 ```php
 <?php
 
-use FlixTech\AvroSerializer\Objects\RecordSerializer;
+use PrimaAssicurazioni\AvroSerializer\Objects\RecordSerializer;
 
 /** @var \FlixTech\SchemaRegistryApi\Registry $schemaRegistry */
 $recordSerializer = new RecordSerializer(
@@ -80,7 +80,7 @@ This is a simple example on how you can use the `RecordSerializer` to encode mes
 ```php
 <?php
 
-/** @var \FlixTech\AvroSerializer\Objects\RecordSerializer $recordSerializer */
+/** @var \PrimaAssicurazioni\AvroSerializer\Objects\RecordSerializer $recordSerializer */
 $subject = 'my-topic-value';
 $avroSchema = AvroSchema::parse('{"type": "string"}');
 $record = 'Test message';
@@ -96,7 +96,7 @@ This is a simple example on how you can use the `RecordSerializer` to decode mes
 ```php
 <?php
 
-/** @var \FlixTech\AvroSerializer\Objects\RecordSerializer $recordSerializer */
+/** @var \PrimaAssicurazioni\AvroSerializer\Objects\RecordSerializer $recordSerializer */
 /** @var string $encodedBinaryAvro */
 $record = $recordSerializer->decodeMessage($encodedBinaryAvro);
 
@@ -125,7 +125,7 @@ is targeting a key schema.
 
 namespace MyNamespace;
 
-use FlixTech\AvroSerializer\Objects\SchemaResolvers\FileResolver;
+use PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolvers\FileResolver;
 use function get_class;use function is_object;
 use function str_replace;
 
@@ -162,7 +162,7 @@ value- or key-schemas respectively. A key schema resolver is optional.
 ```php
 <?php
 
-use FlixTech\AvroSerializer\Objects\SchemaResolvers\CallableResolver;
+use PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolvers\CallableResolver;
 use PHPUnit\Framework\Assert;
 use function Widmogrod\Functional\constt;
 
@@ -208,8 +208,8 @@ The `DefinitionInterfaceResolver` checks if a given record implements that inter
 
 namespace MyNamespace;
 
-use FlixTech\AvroSerializer\Objects\HasSchemaDefinitionInterface;
-use FlixTech\AvroSerializer\Objects\SchemaResolvers\DefinitionInterfaceResolver;
+use PrimaAssicurazioni\AvroSerializer\Objects\HasSchemaDefinitionInterface;
+use PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolvers\DefinitionInterfaceResolver;
 
 class MyRecord implements HasSchemaDefinitionInterface {
     public static function valueSchemaJson() : string
@@ -250,12 +250,12 @@ will win. If none of the resolvers in the chain is able to determine a schema, a
 
 namespace MyNamespace;
 
-use FlixTech\AvroSerializer\Objects\SchemaResolvers\ChainResolver;
+use PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolvers\ChainResolver;
 
 $record = ['foo' => 'bar'];
 
-/** @var \FlixTech\AvroSerializer\Objects\SchemaResolvers\FileResolver $fileResolver */
-/** @var \FlixTech\AvroSerializer\Objects\SchemaResolvers\CallableResolver $callableResolver */
+/** @var \PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolvers\FileResolver $fileResolver */
+/** @var \PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolvers\CallableResolver $callableResolver */
 
 $resolver = new ChainResolver($fileResolver, $callableResolver);
 // or new ChainResolver(...[$fileResolver, $callableResolver]);
@@ -271,8 +271,8 @@ This library provides integrations with the [Symfony Serializer component](https
 ```php
 <?php
 
-use FlixTech\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
-use FlixTech\AvroSerializer\Objects\DefaultRecordSerializerFactory;
+use PrimaAssicurazioni\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
+use PrimaAssicurazioni\AvroSerializer\Objects\DefaultRecordSerializerFactory;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 use Symfony\Component\Serializer\Serializer;
@@ -362,14 +362,14 @@ that parses these annotations and maps between the schema field names and the pr
 ```php
 <?php
 
-use FlixTech\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
-use FlixTech\AvroSerializer\Integrations\Symfony\Serializer\NameConverter\AvroNameConverter;
-use FlixTech\AvroSerializer\Objects\DefaultRecordSerializerFactory;
+use PrimaAssicurazioni\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
+use PrimaAssicurazioni\AvroSerializer\Integrations\Symfony\Serializer\NameConverter\AvroNameConverter;
+use PrimaAssicurazioni\AvroSerializer\Objects\DefaultRecordSerializerFactory;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Doctrine\Common\Annotations\AnnotationReader as DoctrineAnnotationReader;
 use Doctrine\Common\Annotations\AnnotationRegistry;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\AnnotationReader;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\AnnotationReader;
 
 $recordSerializer = DefaultRecordSerializerFactory::get(
     getenv('SCHEMA_REGISTRY_HOST')
@@ -397,8 +397,8 @@ the [SchemaBuilder API provided by the Java SDK](https://avro.apache.org/docs/1.
 ```php
 <?php
 
-use FlixTech\AvroSerializer\Objects\Schema;
-use FlixTech\AvroSerializer\Objects\Schema\Record\FieldOption;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Record\FieldOption;
 
 Schema::record()
     ->name('object')
@@ -419,8 +419,8 @@ class metadata (annotations). For this to work, you have to install the `doctrin
 ```php
 <?php
 
-use FlixTech\AvroSerializer\Objects\DefaultSchemaGeneratorFactory;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Annotations as SerDe;
+use PrimaAssicurazioni\AvroSerializer\Objects\DefaultSchemaGeneratorFactory;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Annotations as SerDe;
 
 /**
  * @SerDe\AvroType("record")

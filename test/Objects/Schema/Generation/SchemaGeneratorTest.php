@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Test\Objects\Schema\Generation;
+namespace PrimaAssicurazioni\AvroSerializer\Test\Objects\Schema\Generation;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use FlixTech\AvroSerializer\Objects\Schema;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\AttributeReader;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\SchemaGenerator;
-use FlixTech\AvroSerializer\Test\Objects\Schema\Generation\Fixture\ArraysWithComplexType;
-use FlixTech\AvroSerializer\Test\Objects\Schema\Generation\Fixture\EmptyRecord;
-use FlixTech\AvroSerializer\Test\Objects\Schema\Generation\Fixture\MapsWithComplexType;
-use FlixTech\AvroSerializer\Test\Objects\Schema\Generation\Fixture\PrimitiveTypes;
-use FlixTech\AvroSerializer\Test\Objects\Schema\Generation\Fixture\RecordWithComplexTypes;
-use FlixTech\AvroSerializer\Test\Objects\Schema\Generation\Fixture\RecordWithRecordType;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\AttributeReader;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\SchemaGenerator;
+use PrimaAssicurazioni\AvroSerializer\Test\Objects\Schema\Generation\Fixture\ArraysWithComplexType;
+use PrimaAssicurazioni\AvroSerializer\Test\Objects\Schema\Generation\Fixture\EmptyRecord;
+use PrimaAssicurazioni\AvroSerializer\Test\Objects\Schema\Generation\Fixture\MapsWithComplexType;
+use PrimaAssicurazioni\AvroSerializer\Test\Objects\Schema\Generation\Fixture\PrimitiveTypes;
+use PrimaAssicurazioni\AvroSerializer\Test\Objects\Schema\Generation\Fixture\RecordWithComplexTypes;
+use PrimaAssicurazioni\AvroSerializer\Test\Objects\Schema\Generation\Fixture\RecordWithRecordType;
 
 class SchemaGeneratorTest extends TestCase
 {

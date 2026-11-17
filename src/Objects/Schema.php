@@ -2,34 +2,34 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects;
+namespace PrimaAssicurazioni\AvroSerializer\Objects;
 
 use Apache\Avro\Schema\AvroSchema;
 use Apache\Avro\Schema\AvroSchemaParseException;
-use FlixTech\AvroSerializer\Objects\Schema\ArrayType;
-use FlixTech\AvroSerializer\Objects\Schema\BooleanType;
-use FlixTech\AvroSerializer\Objects\Schema\BytesType;
-use FlixTech\AvroSerializer\Objects\Schema\DateType;
-use FlixTech\AvroSerializer\Objects\Schema\DoubleType;
-use FlixTech\AvroSerializer\Objects\Schema\DurationType;
-use FlixTech\AvroSerializer\Objects\Schema\EnumType;
-use FlixTech\AvroSerializer\Objects\Schema\FixedType;
-use FlixTech\AvroSerializer\Objects\Schema\FloatType;
-use FlixTech\AvroSerializer\Objects\Schema\IntType;
-use FlixTech\AvroSerializer\Objects\Schema\LocalTimestampMicros;
-use FlixTech\AvroSerializer\Objects\Schema\LocalTimestampMillisType;
-use FlixTech\AvroSerializer\Objects\Schema\LongType;
-use FlixTech\AvroSerializer\Objects\Schema\MapType;
-use FlixTech\AvroSerializer\Objects\Schema\NamedType;
-use FlixTech\AvroSerializer\Objects\Schema\NullType;
-use FlixTech\AvroSerializer\Objects\Schema\RecordType;
-use FlixTech\AvroSerializer\Objects\Schema\StringType;
-use FlixTech\AvroSerializer\Objects\Schema\TimeMicrosType;
-use FlixTech\AvroSerializer\Objects\Schema\TimeMillisType;
-use FlixTech\AvroSerializer\Objects\Schema\TimestampMicrosType;
-use FlixTech\AvroSerializer\Objects\Schema\TimestampMillisType;
-use FlixTech\AvroSerializer\Objects\Schema\UnionType;
-use FlixTech\AvroSerializer\Objects\Schema\UuidType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\ArrayType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\BooleanType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\BytesType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\DateType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\DoubleType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\DurationType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\EnumType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\FixedType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\FloatType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\IntType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\LocalTimestampMicros;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\LocalTimestampMillisType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\LongType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\MapType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\NamedType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\NullType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\RecordType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\StringType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\TimeMicrosType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\TimeMillisType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\TimestampMicrosType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\TimestampMillisType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\UnionType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\UuidType;
 
 abstract class Schema implements Definition
 {

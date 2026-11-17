@@ -1,14 +1,14 @@
 <?php
 
-namespace FlixTech\AvroSerializer\Test\Objects\SchemaResolvers;
+namespace PrimaAssicurazioni\AvroSerializer\Test\Objects\SchemaResolvers;
 
 use Apache\Avro\Schema\AvroSchema;
 use Apache\Avro\Schema\AvroSchemaParseException;
-use FlixTech\AvroSerializer\Objects\SchemaResolverInterface;
-use FlixTech\AvroSerializer\Objects\SchemaResolvers\ChainResolver;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolverInterface;
+use PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolvers\ChainResolver;
 
 class ChainResolverTest extends TestCase
 {

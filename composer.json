@@ -41,12 +41,14 @@
     "vlucas/phpdotenv": "^5.0",
     "symfony/serializer": "^5.4|^6.4|^7.1",
     "doctrine/annotations": "^2.0",
-    "phpoption/phpoption": "^1.8.0"
+    "phpoption/phpoption": "^1.8.0",
+    "phpstan/phpstan": "^2.3",
+    "friendsofphp/php-cs-fixer": "^3.95"
   },
   "autoload": {
     "psr-4": {
-      "FlixTech\\AvroSerializer\\Objects\\": "src/Objects",
-      "FlixTech\\AvroSerializer\\Integrations\\": "integrations/"
+      "PrimaAssicurazioni\\AvroSerializer\\Objects\\": "src/Objects",
+      "PrimaAssicurazioni\\AvroSerializer\\Integrations\\": "integrations/"
     },
     "files": [
       "src/Protocol.php",
@@ -60,10 +62,13 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "FlixTech\\AvroSerializer\\Test\\": "test/",
-      "FlixTech\\AvroSerializer\\Benchmarks\\": "benchmarks/",
-      "FlixTech\\AvroSerializer\\Examples\\": "examples/"
+      "PrimaAssicurazioni\\AvroSerializer\\Test\\": "test/",
+      "PrimaAssicurazioni\\AvroSerializer\\Benchmarks\\": "benchmarks/",
+      "PrimaAssicurazioni\\AvroSerializer\\Examples\\": "examples/"
     }
+  },
+  "scripts": {
+    "phpstan": ""
   },
   "repositories": [
     {

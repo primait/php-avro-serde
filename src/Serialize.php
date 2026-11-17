@@ -1,6 +1,6 @@
 <?php
 
-namespace FlixTech\AvroSerializer\Serialize;
+namespace PrimaAssicurazioni\AvroSerializer\Serialize;
 
 use Apache\Avro\Datum\AvroIOBinaryDecoder;
 use Apache\Avro\Datum\AvroIOBinaryEncoder;
@@ -9,14 +9,14 @@ use Apache\Avro\Datum\AvroIODatumWriter;
 use Apache\Avro\IO\AvroIOException;
 use Apache\Avro\IO\AvroStringIO;
 use Apache\Avro\Schema\AvroSchema;
-use FlixTech\AvroSerializer\Objects\Exceptions\Exceptions;
+use PrimaAssicurazioni\AvroSerializer\Objects\Exceptions\Exceptions;
 use Widmogrod\Monad\Either\Either;
 use Widmogrod\Monad\Either\Left;
 use Widmogrod\Monad\Either\Right;
 
 use function Widmogrod\Functional\curryN;
 
-const avroStringIo = '\FlixTech\AvroSerializer\Serialize\avroStringIo';
+const avroStringIo = '\PrimaAssicurazioni\AvroSerializer\Serialize\avroStringIo';
 
 /**
  * @throws AvroIOException
@@ -26,21 +26,21 @@ function avroStringIo(string $contents): AvroStringIO
     return new AvroStringIO($contents);
 }
 
-const avroBinaryEncoder = '\FlixTech\AvroSerializer\Serialize\avroBinaryEncoder';
+const avroBinaryEncoder = '\PrimaAssicurazioni\AvroSerializer\Serialize\avroBinaryEncoder';
 
 function avroBinaryEncoder(AvroStringIO $io): AvroIOBinaryEncoder
 {
     return new AvroIOBinaryEncoder($io);
 }
 
-const avroBinaryDecoder = '\FlixTech\AvroSerializer\Serialize\avroBinaryDecoder';
+const avroBinaryDecoder = '\PrimaAssicurazioni\AvroSerializer\Serialize\avroBinaryDecoder';
 
 function avroBinaryDecoder(AvroStringIO $io): AvroIOBinaryDecoder
 {
     return new AvroIOBinaryDecoder($io);
 }
 
-const avroDatumWriter = '\FlixTech\AvroSerializer\Serialize\avroDatumWriter';
+const avroDatumWriter = '\PrimaAssicurazioni\AvroSerializer\Serialize\avroDatumWriter';
 
 /**
  * @throws AvroIOException
@@ -53,7 +53,7 @@ function avroDatumWriter(): callable
     return curryN(4, writeDatum)($writer)($io);
 }
 
-const writeDatum = '\FlixTech\AvroSerializer\Serialize\writeDatum';
+const writeDatum = '\PrimaAssicurazioni\AvroSerializer\Serialize\writeDatum';
 
 function writeDatum(AvroIODatumWriter $writer, AvroStringIO $io, AvroSchema $schema, mixed $record): Either
 {
@@ -69,7 +69,7 @@ function writeDatum(AvroIODatumWriter $writer, AvroStringIO $io, AvroSchema $sch
     }
 }
 
-const avroDatumReader = '\FlixTech\AvroSerializer\Serialize\avroDatumReader';
+const avroDatumReader = '\PrimaAssicurazioni\AvroSerializer\Serialize\avroDatumReader';
 
 /**
  * @throws AvroIOException
@@ -82,7 +82,7 @@ function avroDatumReader(): callable
     return curryN(5, readDatum)($reader)($io);
 }
 
-const readDatum = '\FlixTech\AvroSerializer\Serialize\readDatum';
+const readDatum = '\PrimaAssicurazioni\AvroSerializer\Serialize\readDatum';
 
 function readDatum(
     AvroIODatumReader $reader,

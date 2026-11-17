@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Integrations\Symfony\Serializer\NameConverter;
+namespace PrimaAssicurazioni\AvroSerializer\Integrations\Symfony\Serializer\NameConverter;
 
 class PropertyNameMap
 {

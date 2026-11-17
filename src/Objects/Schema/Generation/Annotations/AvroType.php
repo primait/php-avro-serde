@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects\Schema\Generation\Annotations;
+namespace PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Annotations;
 
-use FlixTech\AvroSerializer\Objects\Schema\AttributeName;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\SchemaAttribute;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\SchemaAttributes;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\AttributeName;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\SchemaAttribute;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\SchemaAttributes;
 
 /**
  * @Annotation
@@ -16,7 +16,7 @@ final class AvroType implements SchemaAttribute
     public string $value;
 
     /**
-     * @var array<\FlixTech\AvroSerializer\Objects\Schema\Generation\SchemaAttribute>
+     * @var array<\PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\SchemaAttribute>
      */
     public array $attributes = [];
 

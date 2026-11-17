@@ -10,10 +10,8 @@ SCHEMA_REGISTRY_IPV4 ?= 172.68.0.103
 KAFKA_BROKER_IPV4 ?= 172.68.0.102
 COMPOSER ?= bin/composer.phar
 COMPOSER_VERSION ?= 2.11.2
-PHP_STAN ?= bin/phpstan.phar
-PHP_STAN_VERSION ?= 2.3.6
-PHP_CS_FIXER ?= bin/php-cs-fixer.phar
-PHP_CS_FIXER_VERSION ?= 3.95.31
+PHP_STAN ?= vendor/bin/phpstan
+PHP_CS_FIXER ?= vendor/bin/php-cs-fixer
 PHPUNIT ?= vendor/bin/phpunit
 PHP ?= bin/php
 PHP_VERSION ?= 8.3
@@ -66,12 +64,8 @@ examples:
 	PHP_VERSION=$(PHP_VERSION) $(PHP) examples/*
 
 install-phars:
-	curl https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v$(PHP_CS_FIXER_VERSION)/php-cs-fixer.phar -o bin/php-cs-fixer.phar -LR -z bin/php-cs-fixer.phar
-	chmod a+x bin/php-cs-fixer.phar
 	curl https://getcomposer.org/download/$(COMPOSER_VERSION)/composer.phar -o bin/composer.phar -LR -z bin/composer.phar
 	chmod a+x bin/composer.phar
-	curl https://github.com/phpstan/phpstan/releases/download/$(PHP_STAN_VERSION)/phpstan.phar -o bin/phpstan.phar -LR -z bin/phpstan.phar
-	chmod a+x bin/phpstan.phar
 
 platform:
 	docker compose down

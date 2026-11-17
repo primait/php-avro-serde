@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Test\Objects\Schema\Generation\Fixture;
+namespace PrimaAssicurazioni\AvroSerializer\Test\Objects\Schema\Generation\Fixture;
 
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Annotations as SerDe;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\AvroAliases;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\AvroDefault;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\AvroItems;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\AvroName;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\AvroNamespace;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\AvroOrder;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\AvroSize;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\AvroSymbols;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\AvroType;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\AvroValues;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\Order;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\Attributes\Type;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Annotations as SerDe;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroAliases;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroDefault;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroItems;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroName;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroNamespace;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroOrder;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroSize;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroSymbols;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroType;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\AvroValues;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\Order;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\Attributes\Type;
 
 /**
  * @SerDe\AvroType("record")

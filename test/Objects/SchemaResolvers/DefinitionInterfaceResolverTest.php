@@ -1,13 +1,13 @@
 <?php
 
-namespace FlixTech\AvroSerializer\Test\Objects\SchemaResolvers;
+namespace PrimaAssicurazioni\AvroSerializer\Test\Objects\SchemaResolvers;
 
 use Apache\Avro\Schema\AvroSchema;
 use Apache\Avro\Schema\AvroSchemaParseException;
-use FlixTech\AvroSerializer\Objects\HasSchemaDefinitionInterface;
-use FlixTech\AvroSerializer\Objects\SchemaResolvers\DefinitionInterfaceResolver;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use PrimaAssicurazioni\AvroSerializer\Objects\HasSchemaDefinitionInterface;
+use PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolvers\DefinitionInterfaceResolver;
 
 class DefinitionInterfaceResolverTest extends TestCase
 {

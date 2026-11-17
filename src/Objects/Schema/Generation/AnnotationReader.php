@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects\Schema\Generation;
+namespace PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation;
 
 use Doctrine\Common\Annotations\Reader as DoctrineAnnotationReader;
 

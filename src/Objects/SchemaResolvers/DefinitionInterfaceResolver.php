@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects\SchemaResolvers;
+namespace PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolvers;
 
 use Apache\Avro\Schema\AvroSchema;
 use Apache\Avro\Schema\AvroSchemaParseException;
 use Assert\Assert;
-use FlixTech\AvroSerializer\Objects\HasSchemaDefinitionInterface;
-use FlixTech\AvroSerializer\Objects\SchemaResolverInterface;
+use PrimaAssicurazioni\AvroSerializer\Objects\HasSchemaDefinitionInterface;
+use PrimaAssicurazioni\AvroSerializer\Objects\SchemaResolverInterface;
 
 class DefinitionInterfaceResolver implements SchemaResolverInterface
 {

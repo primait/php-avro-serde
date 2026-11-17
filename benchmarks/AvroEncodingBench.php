@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Benchmarks;
+namespace PrimaAssicurazioni\AvroSerializer\Benchmarks;
 
 use AvroIOException;
 use AvroSchema;
 use AvroSchemaParseException;
 use Exception;
-use FlixTech\AvroSerializer\Objects\RecordSerializer;
+use PrimaAssicurazioni\AvroSerializer\Objects\RecordSerializer;
 use FlixTech\SchemaRegistryApi\Exception\SchemaRegistryException;
 use FlixTech\SchemaRegistryApi\Registry;
 use FlixTech\SchemaRegistryApi\Registry\BlockingRegistry;

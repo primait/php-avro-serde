@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Test\Integrations\Symfony\Serializer;
+namespace PrimaAssicurazioni\AvroSerializer\Test\Integrations\Symfony\Serializer;
 
 use Apache\Avro\Schema\AvroSchema;
 use Apache\Avro\Schema\AvroSchemaParseException;
-use FlixTech\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
-use FlixTech\AvroSerializer\Objects\RecordSerializer;
-use FlixTech\AvroSerializer\Test\AbstractFunctionalTestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\MockObject;
+use PrimaAssicurazioni\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
+use PrimaAssicurazioni\AvroSerializer\Objects\RecordSerializer;
+use PrimaAssicurazioni\AvroSerializer\Test\AbstractFunctionalTestCase;
 use PrimaAssicurazioni\SchemaRegistryApi\Exception\SchemaRegistryException;
 
 class AvroSerDeEncoderTest extends AbstractFunctionalTestCase

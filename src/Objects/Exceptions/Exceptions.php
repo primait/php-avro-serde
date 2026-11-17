@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Objects\Exceptions;
+namespace PrimaAssicurazioni\AvroSerializer\Objects\Exceptions;
 
 use Apache\Avro\Schema\AvroSchema;
 

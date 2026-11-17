@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Test\Integrations\Symfony\Serializer;
+namespace PrimaAssicurazioni\AvroSerializer\Test\Integrations\Symfony\Serializer;
 
 use Doctrine\Common\Annotations\AnnotationReader as DoctrineAnnotationReader;
-use FlixTech\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
-use FlixTech\AvroSerializer\Integrations\Symfony\Serializer\NameConverter\AvroNameConverter;
-use FlixTech\AvroSerializer\Objects\Schema\Generation\AnnotationReader;
-use FlixTech\AvroSerializer\Test\Integrations\Symfony\Serializer\Fixture\SampleUserRecord;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use PrimaAssicurazioni\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
+use PrimaAssicurazioni\AvroSerializer\Integrations\Symfony\Serializer\NameConverter\AvroNameConverter;
+use PrimaAssicurazioni\AvroSerializer\Objects\Schema\Generation\AnnotationReader;
+use PrimaAssicurazioni\AvroSerializer\Test\Integrations\Symfony\Serializer\Fixture\SampleUserRecord;
 
 class AvroNameConverterTest extends TestCase
 {

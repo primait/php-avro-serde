@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace FlixTech\AvroSerializer\Integrations\Symfony\Serializer;
+namespace PrimaAssicurazioni\AvroSerializer\Integrations\Symfony\Serializer;
 
 use Apache\Avro\Schema\AvroSchema;
 use Assert\Assert;
-use FlixTech\AvroSerializer\Objects\RecordSerializer;
+use PrimaAssicurazioni\AvroSerializer\Objects\RecordSerializer;
 use Symfony\Component\Serializer\Encoder\DecoderInterface;
 use Symfony\Component\Serializer\Encoder\EncoderInterface;
 
