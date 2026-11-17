@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace FlixTech\AvroSerializer\Objects;
 
 use Assert\Assert;
-use FlixTech\SchemaRegistryApi\Registry\Cache\AvroObjectCacheAdapter;
-use FlixTech\SchemaRegistryApi\Registry\CacheAdapter;
-use FlixTech\SchemaRegistryApi\Registry\CachedRegistry;
-use FlixTech\SchemaRegistryApi\Registry\PromisingRegistry;
 use GuzzleHttp\Client;
+use PrimaAssicurazioni\SchemaRegistryApi\Registry\Cache\AvroObjectCacheAdapter;
+use PrimaAssicurazioni\SchemaRegistryApi\Registry\CacheAdapter;
+use PrimaAssicurazioni\SchemaRegistryApi\Registry\CachedRegistry;
+use PrimaAssicurazioni\SchemaRegistryApi\Registry\PromisingRegistry;
 
 final class DefaultRecordSerializerFactory
 {

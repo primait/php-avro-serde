@@ -7,11 +7,11 @@ namespace FlixTech\AvroSerializer\Test\Objects;
 use FlixTech\AvroSerializer\Objects\DefaultRecordSerializerFactory;
 use FlixTech\AvroSerializer\Objects\RecordSerializer;
 use FlixTech\AvroSerializer\Test\AbstractFunctionalTestCase;
-use FlixTech\SchemaRegistryApi\Exception\IncompatibleAvroSchemaException;
-use FlixTech\SchemaRegistryApi\Exception\SchemaRegistryException;
 use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\Test;
+use PrimaAssicurazioni\SchemaRegistryApi\Exception\IncompatibleAvroSchemaException;
+use PrimaAssicurazioni\SchemaRegistryApi\Exception\SchemaRegistryException;
 
 #[Group('integration')]
 class RecordSerializerIntegrationTest extends AbstractFunctionalTestCase

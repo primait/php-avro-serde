@@ -9,14 +9,14 @@ use Apache\Avro\Schema\AvroSchemaParseException;
 use FlixTech\AvroSerializer\Objects\Exceptions\AvroEncodingException;
 use FlixTech\AvroSerializer\Objects\RecordSerializer;
 use FlixTech\AvroSerializer\Test\AbstractFunctionalTestCase;
-use FlixTech\SchemaRegistryApi\Exception\SchemaNotFoundException;
-use FlixTech\SchemaRegistryApi\Exception\SchemaRegistryException;
-use FlixTech\SchemaRegistryApi\Exception\SubjectNotFoundException;
-use FlixTech\SchemaRegistryApi\Registry;
 use GuzzleHttp\Promise\FulfilledPromise;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\MockObject\MockObject;
+use PrimaAssicurazioni\SchemaRegistryApi\Exception\SchemaNotFoundException;
+use PrimaAssicurazioni\SchemaRegistryApi\Exception\SchemaRegistryException;
+use PrimaAssicurazioni\SchemaRegistryApi\Exception\SubjectNotFoundException;
+use PrimaAssicurazioni\SchemaRegistryApi\Registry;
 
 use function FlixTech\AvroSerializer\Common\memoize;
 

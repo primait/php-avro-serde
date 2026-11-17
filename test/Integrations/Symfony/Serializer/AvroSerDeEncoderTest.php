@@ -9,10 +9,10 @@ use Apache\Avro\Schema\AvroSchemaParseException;
 use FlixTech\AvroSerializer\Integrations\Symfony\Serializer\AvroSerDeEncoder;
 use FlixTech\AvroSerializer\Objects\RecordSerializer;
 use FlixTech\AvroSerializer\Test\AbstractFunctionalTestCase;
-use FlixTech\SchemaRegistryApi\Exception\SchemaRegistryException;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\MockObject;
+use PrimaAssicurazioni\SchemaRegistryApi\Exception\SchemaRegistryException;
 
 class AvroSerDeEncoderTest extends AbstractFunctionalTestCase
 {

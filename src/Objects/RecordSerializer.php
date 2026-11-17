@@ -6,11 +6,11 @@ namespace FlixTech\AvroSerializer\Objects;
 
 use Apache\Avro\IO\AvroIOException;
 use Apache\Avro\Schema\AvroSchema;
-use FlixTech\SchemaRegistryApi\Exception\SchemaNotFoundException;
-use FlixTech\SchemaRegistryApi\Exception\SchemaRegistryException;
-use FlixTech\SchemaRegistryApi\Exception\SubjectNotFoundException;
-use FlixTech\SchemaRegistryApi\Registry;
 use GuzzleHttp\Promise\PromiseInterface;
+use PrimaAssicurazioni\SchemaRegistryApi\Exception\SchemaNotFoundException;
+use PrimaAssicurazioni\SchemaRegistryApi\Exception\SchemaRegistryException;
+use PrimaAssicurazioni\SchemaRegistryApi\Exception\SubjectNotFoundException;
+use PrimaAssicurazioni\SchemaRegistryApi\Registry;
 use Widmogrod\Monad\Either\Either;
 
 use const FlixTech\AvroSerializer\Common\get;
